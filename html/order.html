@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="../css/estilo.css" />
+</head>
+<body>
+<header style="font-size: 40px;">
+    Place an Order
+</header>
+<div class="homebtn"><a href="../html/main.html">Home</a></div>
+<main>
+    <h1>Menu Items</h1>
+    <h2>Beverages</h2>
+    <div class="food">
+        <label for="coffeeCounter">Coffee</label>
+        <p>Price: $ 5.00</p>
+        <input type="number" class="menu" min="0" id="coffeeCounter"/>
+        <p>Total: $<span id="coffeeTotal"></span></p>
+
+        <label for="teaCounter">Iced Tea</label>
+        <p>Price: $ 4.00</p>
+        <input type="number" class="menu" min="0" id="teaCounter"/>
+        <p>Total: $<span id="teaTotal"></span></p>
+
+        <label for="fdCounter">Fountain Drink</label>
+        <p>Price: $ 4.00</p>
+        <input type="number" class="menu" min="0" id="fdCounter"/>
+        <p>Total: $<span id="fdTotal"></span></p>
+    </div>
+    <div>
+        <h2>Breakfast</h2>
+        <p>Each item is limited to 5 units per order.</p>
+
+        <label for="yogurtCounter">Yogurt Parfait</label>
+        <p>Price: $ 4.00</p>
+        <input type="number" class="menu" min="0" max="5" id="yogurtCounter"/>
+        <p>Total: $<span id="yogurtTotal"></span></p>
+
+        <label for="pancakeCounter">Pancakes</label>
+        <p>Price: $ 8.00</p>
+        <input type="number" class="menu" min="0" max="5" id="pancakeCounter"/>
+        <p>Total: $<span id="pancakeTotal"></span></p>
+
+        <label for="waffleCounter">Waffles</label>
+        <p>Price: $ 7.00</p>
+        <input type="number" class="menu" min="0" max="5" id="waffleCounter"/>
+        <p>Total: $<span id="waffleTotal"></span></p>
+
+    </div>
+    <div>
+        <h2>Lunch</h2>
+        
+            <label for="burgerCounter">Hamburger</label>
+            <p>Price: $ 8.00</p>
+            <input type="number" class="menu" min="0" id="burgerCounter"/>
+            <p>Total: $<span id="burgerTotal"></span></p>
+
+            <label for="chickenCounter">Fried Chicken</label>
+            <p>Price: $ 7.00</p>
+            <input type="number" class="menu" min="0" id="chickenCounter"/>
+            <p>Total: $<span id="chickenTotal"></span></p>
+
+            <label for="saladCounter">Salad</label>
+            <p>Price: $ 7.00</p>
+            <input type="number" class="menu" min="0" id="saladCounter"/>
+            <p>Total: $<span id="saladTotal"></span></p>
+
+    </div>
+    <div class="cost">
+        <div>Subtotal: $<span class="menu" id="subTotal"></span></div>
+        <div>Tax: $<span class="menu" id ="taxCost"></span></div>
+        <div>Total: $<span class="menu" id="totalCost"></span></div>
+    </div>
+    <button type="submit" id="submit">Submit Order</button>
+</main>
+<script src="../jscript/jorder.js"></script>
+
+
+
+
+
+</body>
+</html>

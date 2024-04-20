@@ -1,0 +1,125 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+header{
+    background-color: rgb(191, 0, 34);
+    color: whitesmoke;
+    padding: 20px 8px;
+    display: flex;
+    text-align: left;
+}
+footer {
+    text-align: center;
+    padding: 20px 10px;
+    background-color: #590b0b;
+    color: whitesmoke;
+}
+footer.p{
+    text-align: left;
+}
+.homebtn, a{
+    background-color: maroon;
+    width: 80px;
+    height: 60px; 
+    text-align: center;
+    color: white;
+    padding: 10px 10px; 
+}
+
+
+/*other*/
+:root {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    background-color: whitesmoke;
+}
+
+h1 {
+    font-size:2.5rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 50px;
+    margin-right:50px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.75rem;
+    margin-top: 50px;
+    text-align: center;
+}
+h4{
+    font-size:1.25rem;
+    margin-right:50px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: whitesmoke;
+}
+
+/* CSS section for logo*/
+#imgLogo {
+    max-width: 150px;
+    background-color: whitesmoke;
+}
+
+/* CSS for menubar */
+#menuBar {
+    background-color: maroon;
+
+    font-family: 'Arial';
+    font-size: 2rem;
+    width: 100%;
+    display: inline-block;
+    padding: 1rem 0.5rem;
+    margin-top: 15px;
+    border-radius: 25px;
+    ul{
+        margin:0;
+        padding:0;
+        list-style: none;
+        white-space: nowrap;
+
+        /*Flexbox for better mobile viewing*/
+        display: flex;
+        column-gap: 5rem;
+        flex-wrap: wrap;
+        flex-direction:initial;
+
+        li {
+            float: left;
+            a{
+                color: white;
+            }
+            a.current {
+            background-color:white;
+            color: black; 
+            }
+            &:hover {
+            color: white;
+            background-color: black;
+            }
+        }
+    }
+}
+
+/* Default background and border color for main content*/
+main{
+    background-color: whitesmoke;
+    border-radius: 1em;
+    border: 2px solid  maroon; 
+    width:87.5%;
+    display:block;
+    margin-left:auto;
+    margin-right: auto;
+}

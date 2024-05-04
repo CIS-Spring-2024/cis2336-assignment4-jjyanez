@@ -12,19 +12,43 @@
 header{
     background-color: rgb(191, 0, 34);
     color: whitesmoke;
-    padding: 20px 8px;
-    display: flex;
-    text-align: left;
+    padding: 20px 0;
+    text-align: center;
+}
+header h1{
+    margin:0;
+    text-align: center;
+}
+.logo{
+    position: absolute;
+    background-color: whitesmoke;
+    height: 70px;
+    left: 15px;
+    top:4px;
+    
 }
 footer {
-    text-align: center;
-    padding: 20px 10px;
-    background-color: #590b0b;
-    color: whitesmoke;
-}
-footer.p{
+    margin-top: 50px;
     text-align: left;
+    padding: 15px 0;
+    background: maroon;
+    color: whitesmoke;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
 }
+
+footer a {
+    color: red; 
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+footer p, a{
+    margin-left: 20px;
+}
+
+
 /* navbar */
 .navbar{
     background-color: maroon;
@@ -78,6 +102,21 @@ footer.p{
 .dropdown:hover .dropdown-content{
     display: block;
 }
+/* body portions*/
+#body1, #body2, #body3 {
+    background-color: whitesmoke;
+    padding-left: 1%;
+    padding-right: 1%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+
+
+}
+
+
+
 
 /* menu */
 .menu-title{

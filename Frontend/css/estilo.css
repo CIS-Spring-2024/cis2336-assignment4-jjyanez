@@ -5,30 +5,6 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
-header{
-    background-color: rgb(191, 0, 34);
-    color: whitesmoke;
-    padding: 20px 8px;
-    display: flex;
-    text-align: left;
-}
-footer {
-    text-align: center;
-    padding: 20px 10px;
-    background-color: #590b0b;
-    color: whitesmoke;
-}
-footer.p{
-    text-align: left;
-}
-.homebtn, a{
-    background-color: maroon;
-    width: 80px;
-    height: 60px; 
-    text-align: center;
-    color: white;
-    padding: 10px 10px; 
-}
 
 
 /*other*/
@@ -61,11 +37,6 @@ h4{
     margin-bottom: 25px;
     text-align: center;
 }
-footer {
-    text-align: center;
-    margin-top: 40px;
-    color: whitesmoke;
-}
 
 /* CSS section for logo*/
 #imgLogo {
@@ -73,45 +44,6 @@ footer {
     background-color: whitesmoke;
 }
 
-/* CSS for menubar */
-#menuBar {
-    background-color: maroon;
-
-    font-family: 'Arial';
-    font-size: 2rem;
-    width: 100%;
-    display: inline-block;
-    padding: 1rem 0.5rem;
-    margin-top: 15px;
-    border-radius: 25px;
-    ul{
-        margin:0;
-        padding:0;
-        list-style: none;
-        white-space: nowrap;
-
-        /*Flexbox for better mobile viewing*/
-        display: flex;
-        column-gap: 5rem;
-        flex-wrap: wrap;
-        flex-direction:initial;
-
-        li {
-            float: left;
-            a{
-                color: white;
-            }
-            a.current {
-            background-color:white;
-            color: black; 
-            }
-            &:hover {
-            color: white;
-            background-color: black;
-            }
-        }
-    }
-}
 
 /* Default background and border color for main content*/
 main{
@@ -123,3 +55,154 @@ main{
     margin-left:auto;
     margin-right: auto;
 }
+
+
+
+
+.menu-list {
+    display: grid; /* Grid layout for menu items*/
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+  }
+  
+  .menu-item {
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  .menu-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .menu-item p {
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+  }
+  .menu-item h2 {
+    text-align: center;
+  }
+  /* Add Cart */
+  .input-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-item label {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-left: 140px;
+  }
+  
+  .menu-item button {
+    margin-top: 15px;
+    margin-left: 82%;
+    margin-bottom: 0%;
+    background-color: #e42828;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  .menu-item button:hover {
+    background-color: #c22020;
+  }
+  .menu-item input[type="number"] {
+    width: 50px;
+    height: 30px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: block;
+    margin-right: 155px;
+  }
+  /* Shopping Cart */
+  #shopping-cart h2 {
+    color: #c8102e;
+  }
+  #shopping-cart {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  #shopping-cart h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  #cart-items {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #cart-items li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  #cart-items li:last-child {
+    border-bottom: none;
+  }
+  
+  #cart-total {
+    font-weight: bold;
+  }
+  
+  #shopping-cart button {
+    background-color: #e42828;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  #shopping-cart button:hover {
+    background-color: #c22020;
+  }
+  .confirmation-message {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Footer */
+  footer {
+    position: absolute;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-style: "Lexend", arial;
+  }
+  
+  .footer-content {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .footer-content div {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }

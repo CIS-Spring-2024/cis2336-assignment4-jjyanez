@@ -1,71 +1,51 @@
+let foodContainer = document.querySelector('.food-container');
 
-
-const menuItems={
-    Breakfast:[
-        { name: "Yogurt Parfait", price: "$4.00", image: "../images/yogurt.jpg", id: 1},
-        { name: "Pancakes", price: "$8.00", image: "../images/pancake.png", id: 2 }, 
-        { name: "Waffles", price: "$7.00", image: "../images/waffle.png", id: 3}, 
-    ], 
-    Lunch: [
-        { name: "Traditional Burger", price: "$8.00", image: "../images/burger.jpg", id: 4},
-        { name: "Classic Fried Chicken", price: "$7.00", image: "../images/chicken.png", id: 5},
-        { name: "The Salad", price: "$7.00", image:"../images/salad.jpg", id: 6},
-    ],
-    Beverages: [
-        { name: "Coffee", price: "$4.00", image: "../images/coffee.jpg", id: 7},
-        { name: "Iced Tea", price: "$4.00", image: "../images/tea.jpeg", id: 8}, 
-        { name: "Fountain Drink", price: "$5.00", image: "../images/soda.jpeg", id: 9}, 
-
-    ],
-};
-
-/*
-[
+const fooditem=[
     {
         FoodName: "Yogurt Parfait",
-        foodimg: '../imagef/yogurt.jpg',
+        foodimg: '../images/yogurt.jpg',
         price: "$ 4.00",
         type: "breakFast",
         des: "A simple treat for the morning. Topped with ganola and organic fruit"
     },
     {
         FoodName: "Pancakes",
-        foodimg: '../imagef/pancake.png',
+        foodimg: '../images/pancake.png',
         price: "$ 8.00",
         type: "breakFast",
         des: "An all American classic breakfast option. Served with butter and syrup"
     },
     {
         FoodName: "Waffles",
-        foodimg: '../imagef/waffle.png',
+        foodimg: '../images/waffle.png',
         price: "$ 7.00",
         type: "breakFast",
         des: "You can never go wrong with this breakfast staple. Served with syrup."
     },
     {
         FoodName: "Hamburger",
-        foodimg: '../imagef/burger.jpg',
+        foodimg: '../images/burger.jpg',
         price: "$ 8.00",
         type: "Lunch",
         des: "The true American staple of any eatery. Available with or without toppings and cheese."
     },
     {
         FoodName: "Fried Chicken",
-        foodimg: '../imagef/chicken.png',
+        foodimg: '../images/chicken.png',
         price: "$ 7.00",
         type: "Lunch",
         des: "Simple, but not any less delicious. Hand breaded and freshly fried, available with a variety of dipping sauces."
     },
     {
         FoodName: "Salad",
-        foodimg: '../imagef/salad.jpg',
+        foodimg: '../images/salad.jpg',
         price: "$ 6.00",
         type: "Lunch",
         des: "A slightly healthier option if that is what you prefer. Available with ranch or other assorted dressings."
     },
     {
         FoodName: "Coffee",
-        foodimg: '../imagef/coffee.jpg',
+        foodimg: '../images/coffee.jpg',
         price: "$ 5.00",
         type: "Beverages",
         des: "Freshly ground and freshly brewed. Decaf is also available, but freshness is not guaranteed"
@@ -73,14 +53,14 @@ const menuItems={
 
     {
         FoodName: "Iced Tea",
-        foodimg: '../imagef/tea.jpeg',
+        foodimg: '../images/tea.jpeg',
         price: "$ 4.00",
         type: "Beverages",
         des: "Freshly made tea with ice. Available in lemon, peach or sweet options."
     },
     {
         FoodName: "Fountain Drink",
-        foodimg: '../imagef/soda.jpeg',
+        foodimg: '../images/soda.jpeg',
         price: "$ 4.00",
         type: "Beverages",
         des: "Choose from all the classic soda options. Self serve at your own convenience"
@@ -94,72 +74,76 @@ const menuItems={
         des:"Expect more options to release and become available as time goes on and trends are set. "
     }
 ]
-*/
 
-function showMenu(meal) {
-    fetch(`http://127.0.0.1:3000/api/menu/${meal}`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(menuItems => {
-        console.log('Fetched menu items:', menuItems); // Log fetched menu items
-        const menucontainer = document.getElementById("menuContainer");
-        menucontainer.textContent = ""; // Clear existing menu items
-  
-        menuItems.forEach(item => {
-          // Create elements for each menu item
-          const li = document.createElement("li");
-  
-          // Image element
-          const img = document.createElement("img");
-          img.src = `../imagef/${item.image}`; // Adjusted image path
-          img.alt = item.name;
-          img.className = "menu-item-img";
-          li.appendChild(img);
-  
-          // Text container
-          const textContainer = document.createElement("div");
-          textContainer.className = "menu-item-text";
-  
-          // Menu name
-          const nameSpan = document.createElement("span");
-          nameSpan.textContent = item.name;
-          nameSpan.className = "menu-item-name";
-          nameSpan.style.color = "rgb(227, 113, 0)";
-          nameSpan.style.fontSize = "18px";
-          textContainer.appendChild(nameSpan);
-  
-          // Menu price
-          const priceSpan = document.createElement("span");
-          priceSpan.textContent = item.price;
-          priceSpan.className = "menu-item-price";
-          priceSpan.style.color = "GoldenRod";
-          priceSpan.style.fontSize = "18px";
-          textContainer.appendChild(priceSpan);
-  
-          // Add to cart button
-          const addButton = document.createElement("button");
-          addButton.textContent = "Add to Cart";
-          addButton.className = "add-to-cart-button";
-          addButton.onclick = function () {
-            addToCart(item);
-          };
-          textContainer.appendChild(addButton);
-  
-          li.appendChild(textContainer);
-  
-          // Append the menu item to the menu container
-          menucontainer.appendChild(li);
-        });
-      })
-      .catch(error => {
-        console.error('Error fetching menu items:', error);
-      });
-  }
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    showMenu('Breakfast');
-  });
+
+const food = fooditem.map(item => {
+    const listitem = ` <div class="col-md-6 foodbox ${item.type}">
+    <!-- content div -->
+    <div class="content b my-2">
+        <!-- image -->
+        <div class="c-image">
+            <img src="${item.foodimg}" alt="">
+        </div>
+        <div class="t-n-p my-2">
+            <div class="heading">  
+                <!-- title -->
+                <span class="title">${item.FoodName}</span>
+                <!-- price -->
+                <span class="price">${item.price}</span>
+            </div>
+            <!-- Description -->
+            <div class="des my-3 ">
+                <p>${item.des}</p>
+            </div>
+        </div>   
+    </div>
+</div>`;
+foodContainer.innerHTML += listitem;
+})
+const foodbox = document.querySelectorAll('.foodbox');
+const menu = document.querySelectorAll('ul');
+
+menu.forEach(m => {
+    m.addEventListener('click', e=>{
+        console.log(e.target.innerHTML)
+        foodbox.forEach(box => {
+            box.classList.add('d-none')
+            if(e.target.innerHTML === 'All')
+            {
+                box.classList.remove('d-none')
+            }
+            else if(e.target.innerHTML==='Breakfast'){
+                if(box.classList.contains('breakFast'))
+                {
+                    box.classList.remove('d-none')
+                }
+                
+            }
+            else if(e.target.innerHTML==='Lunch'){
+                if(box.classList.contains('Lunch'))
+                {
+                    box.classList.remove('d-none')
+                }
+                
+            }
+            else if(e.target.innerHTML==='Beverages'){
+                if(box.classList.contains('Beverages'))
+                {
+                    box.classList.remove('d-none')
+                }
+                
+            }
+            else if(e.target.innerHTML==='Dinner'){
+                if(box.classList.contains('Dinner'))
+                {
+                    box.classList.remove('d-none')
+                }
+                
+            }
+            else if(e.target.innerHTML==='Order Now'){
+                location.assign('../html/order.html')
+            }
+        })
+        
+    })
+})

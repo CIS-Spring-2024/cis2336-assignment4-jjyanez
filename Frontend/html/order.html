@@ -5,76 +5,230 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order</title>
     <link rel="stylesheet" href="../css/estilo.css" />
+    <link rel="stylesheet" href="../css/style.css"/>
 </head>
 <body>
-<header style="font-size: 40px;">
-    Place an Order
-</header>
-<div class="homebtn"><a href="../html/main.html">Home</a></div>
+    <div>
+        <header>
+            <div class="top-logo">
+                <img src="../images/Diningservicelogo.png" class="logo">
+            </div>
+            <h1>Sugarland Dining</h1>
+        </header>
+    </div>
+    <div class="navbar" style="margin-bottom: 10px;">
+        <a href="../html/main.html">Home</a>
+        <a href="../html/menu.html">Menu</a> <!-- go to menu and have an order now 
+        link from there, also include it front page banner-->
+        <a href="../html/locate.html">Find Us</a>
+        <!--below is the about drop down menu for site owner, staff and 
+        social media links and pages-->
+        <div class="dropdown">
+            <button class="dropbtn">About Us
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="../html/maker.html">Site Creator</a>
+                <a href="../html/socials.html">Social</a><!--staff and social-->
+            </div>
+        </div>
+    </div>
+
 <main>
     <h1>Menu Items</h1>
-    <h2>Beverages</h2>
-    <div class="food">
-        <label for="coffeeCounter">Coffee</label>
-        <p>Price: $ 5.00</p>
-        <input type="number" class="menu" min="0" id="coffeeCounter"/>
-        <p>Total: $<span id="coffeeTotal"></span></p>
+    <form id="order-form" action="/process-order" method="POST">
+        <section class="menu-list">
+          <div class="menu-item">
+            <img src="../images/burger.jpg" alt="burger" id="burger-image" />
+            <h2>Classic Burger</h2>
+            <p>
+                The true American staple of any eatery. Available with or without toppings and cheese.
+            </p>
+            <p>Price: $8.00</p>
 
-        <label for="teaCounter">Iced Tea</label>
-        <p>Price: $ 4.00</p>
-        <input type="number" class="menu" min="0" id="teaCounter"/>
-        <p>Total: $<span id="teaTotal"></span></p>
+            <div class="input-container">
+              <label for="burger-quantity">Quantity:</label>
+              <input
+                type="number"
+                id="burger-quantity"
+                name="burger-quantity"
+                min="1"
+                max="10"
+                value="1"
+              />
+            </div>
 
-        <label for="fdCounter">Fountain Drink</label>
-        <p>Price: $ 4.00</p>
-        <input type="number" class="menu" min="0" id="fdCounter"/>
-        <p>Total: $<span id="fdTotal"></span></p>
-    </div>
-    <div>
-        <h2>Breakfast</h2>
-        <p>Each item is limited to 5 units per order.</p>
+            <button
+              type="button"
+              onclick="addToCart('Burger', 8.00, 'burger-quantity')"
+            >
+              Add to Cart
+            </button>
+          </div>
 
-        <label for="yogurtCounter">Yogurt Parfait</label>
-        <p>Price: $ 4.00</p>
-        <input type="number" class="menu" min="0" max="5" id="yogurtCounter"/>
-        <p>Total: $<span id="yogurtTotal"></span></p>
+          <div class="menu-item">
+            <img src="../images/chicken.png" alt="chicken" id="chicken-image" />
+            <h2>Fried Chicken</h2>
+            <p>
+                Simple, but not any less delicious. Hand breaded and freshly fried, available with a variety of dipping sauces.
+            </p>
+            <p>Price: $7.00</p>
 
-        <label for="pancakeCounter">Pancakes</label>
-        <p>Price: $ 8.00</p>
-        <input type="number" class="menu" min="0" max="5" id="pancakeCounter"/>
-        <p>Total: $<span id="pancakeTotal"></span></p>
+            <div class="input-container">
+              <label for="chicken-quantity">Quantity:</label>
+              <input
+                type="number"
+                id="chicken-quantity"
+                name="chicken-quantity"
+                min="1"
+                max="10"
+                value="1"
+              />
+            </div>
 
-        <label for="waffleCounter">Waffles</label>
-        <p>Price: $ 7.00</p>
-        <input type="number" class="menu" min="0" max="5" id="waffleCounter"/>
-        <p>Total: $<span id="waffleTotal"></span></p>
+            <button
+              type="button"
+              onclick="addToCart('Chicken', 7.00, 'chicken-quantity')"
+            >
+              Add to Cart
+            </button>
+          </div>
 
-    </div>
-    <div>
-        <h2>Lunch</h2>
-        
-            <label for="burgerCounter">Hamburger</label>
-            <p>Price: $ 8.00</p>
-            <input type="number" class="menu" min="0" id="burgerCounter"/>
-            <p>Total: $<span id="burgerTotal"></span></p>
+          <div class="menu-item">
+            <img src="../images/salad.jpg" alt="salad" id="salad-image" />
+            <h2>Simple Salad</h2>
+            <p>
+                A slightly healthier option if that is what you prefer. Available with ranch or other assorted dressings.
+            </p>
+            <p>Price: $6.00</p>
 
-            <label for="chickenCounter">Fried Chicken</label>
-            <p>Price: $ 7.00</p>
-            <input type="number" class="menu" min="0" id="chickenCounter"/>
-            <p>Total: $<span id="chickenTotal"></span></p>
+            <div class="input-container">
+              <label for="salad-quantity">Quantity:</label>
+              <input
+                type="number"
+                id="salad-quantity"
+                name="salad-quantity"
+                min="1"
+                max="10"
+                value="1"
+              />
+            </div>
 
-            <label for="saladCounter">Salad</label>
-            <p>Price: $ 7.00</p>
-            <input type="number" class="menu" min="0" id="saladCounter"/>
-            <p>Total: $<span id="saladTotal"></span></p>
+            <button
+              type="button"
+              onclick="addToCart('Salad', 6.00, 'salad-quantity')"
+            >
+              Add to Cart
+            </button>
+          </div>
 
-    </div>
-    <div class="cost">
-        <div>Subtotal: $<span class="menu" id="subTotal"></span></div>
-        <div>Tax: $<span class="menu" id ="taxCost"></span></div>
-        <div>Total: $<span class="menu" id="totalCost"></span></div>
-    </div>
-    <button type="submit" id="submit">Submit Order</button>
+          <div class="menu-item">
+            <img
+              src="../images/yogurt.jpg"
+              alt="yogurt parfait"
+              id="yogurt-image"
+            />
+            <h2>Yogurt Parfait</h2>
+            <p>
+                A simple treat for the morning. Topped with ganola and organic fruit.
+            </p>
+            <p>Price: $4.00</p>
+
+            <div class="input-container">
+              <label for="yogurt-quantity">Quantity:</label>
+              <input
+                type="number"
+                id="yogurt-quantity"
+                name="yogurt-quantity"
+                min="1"
+                max="10"
+                value="1"
+              />
+            </div>
+
+            <button
+              type="button"
+              onclick="addToCart('Yogurt', 4.00, 'yogurt-quantity')"
+            >
+              Add to Cart
+            </button>
+          </div>
+
+          <div class="menu-item">
+            <img
+              src="../images/pancake.png"
+              alt="pancake"
+              id="pancake-image"
+            />
+            <h2>Pancakes</h2>
+            <p>
+                An all American classic breakfast option. Served with butter and syrup. 
+            </p>
+            <p>Price: $8.00</p>
+
+            <div class="input-container">
+              <label for="pancake-quantity">Quantity:</label>
+              <input
+                type="number"
+                id="pancake-quantity"
+                name="pancake-quantity"
+                min="1"
+                max="10"
+                value="1"
+              />
+            </div>
+
+            <button
+              type="button"
+              onclick="addToCart('Pancake', 8.00, 'pancake-quantity')"
+            >
+              Add to Cart
+            </button>
+          </div>
+
+          <div class="menu-item">
+            <img
+              src="../images/waffle.png"
+              alt="waffle"
+              id="waffle-image"
+            />
+            <h2>Some Waffles</h2>
+            <p>
+                You can never go wrong with this breakfast staple. Served with syrup.
+            </p>
+            <p>Price: $7.00</p>
+
+            <div class="input-container">
+              <label for="waffle-quantity">Quantity:</label>
+              <input
+                type="number"
+                id="waffle-quantity"
+                name="waffle-quantity"
+                min="1"
+                max="10"
+                value="1"
+              />
+            </div>
+
+            <button
+              type="submit"
+              onclick="addToCart('Waffle', 7.00, 'waffle-quantity')"
+            >
+              Add to Cart
+            </button>
+          </div>
+
+          <!-- Shopping Cart -->
+          <div id="shopping-cart">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: <span id="cart-total">$0.00</span></p>
+            <button type="submit" id="place-order-btn">Place Order</button>
+            <button type="button" id="clear-order-btn">Clear Order</button>
+          </div>
+        </section>
+      </form>
+    </body>
 </main>
 <script src="../jscript/jorder.js"></script>
 

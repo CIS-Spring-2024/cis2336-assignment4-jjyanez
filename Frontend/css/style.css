@@ -31,7 +31,7 @@ footer {
     margin-top: 50px;
     text-align: left;
     padding: 15px 0;
-    background: maroon;
+    background: rgb(85, 0, 0);
     color: whitesmoke;
     font-size: 16px;
     font-family: Arial, sans-serif;
@@ -103,21 +103,127 @@ footer p, a{
     display: block;
 }
 /* body portions*/
-#body1, #body2, #body3 {
-    background-color: whitesmoke;
+#body1, #body2, #body3, #body11, #body12, #body22, #body41,#body42 {
+    background-color: lightgrey;
     padding-left: 1%;
     padding-right: 1%;
     align-items: center;
     justify-content: center;
     display: flex;
-    
-
-
+    border-radius: 10px;
+}
+#body1{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+#body1 img {
+    max-width: 425px;
+    float: left;
+    margin-right: 20px;
+    border: 1px solid transparent; 
+    border-radius: 5px;
+}
+#body2 {
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+#body2 img{
+    margin-left: 20px;
+    border-radius: 4px;
+    float: right;
+}
+#body3 {
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
+#body3 img{
+    margin-right: 20px;
+    border-radius: 4px;
+}
 
+#body11 { 
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: 100px;
+    margin-left: 100px;
+}
 
-
+#body11 h2{
+    margin-top: 8%;
+}
+#body11 p{
+    margin-bottom: 8%;
+}
+#body12 a{
+    color: rgb(208, 0, 0);
+   
+}
+#body12 { 
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+#body12 img{
+    float: right;
+    margin-left: 20px;
+}
+#body21 {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#body22 {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#body21 img{
+    display: block;
+    border-radius: 8px;
+}
+#body41{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+#body41 img{
+    float:left; 
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px; 
+    border-radius: 4px;
+    
+}
+#body42 {
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: 200px;
+    margin-left: 200px;  
+}
+#body42 h2{
+    margin-top: 8%;
+}
+#body42 a{
+    color: rgb(255, 53, 53);
+    padding-bottom: 2px;
+}
+#body42 p{
+    margin-bottom: 20px;
+}
 /* menu */
 .menu-title{
     margin-top: 3rem;
